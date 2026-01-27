@@ -1,18 +1,72 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon/components";
+const work = [
+  {
+    name: "Otero Ediciones",
+    url: "https://oteroediciones.com",
+    image: "/work/oteroediciones.jpg",
+  },
+  {
+    name: "Aprendiendo con Otero Ediciones",
+    url: "https://aprendiendoconoteroediciones.com",
+    image: "/work/aprendiendo.jpg",
+  },
+  {
+    name: "SoundTools",
+    url: "https://soundtools.dev",
+    image: "/work/soundtools.jpg",
+  },
+];
 ---
 
-<div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
-
+<section class="mt-28">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">
+      Recent work
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      A few live examples of websites I’ve built.
+    </p>
   </div>
-</div>
+
+  <div class="mx-auto max-w-3xl mt-8 grid sm:grid-cols-2 gap-5">
+    {work.map((item, index) => (
+      <article
+        class={`group overflow-hidden rounded-xl border border-slate-200 bg-white shadow
+        ${index === work.length - 1 ? "sm:col-span-2 sm:max-w-md sm:mx-auto" : ""}`}
+      >
+        <a href={item.url} target="_blank" rel="noopener" class="block">
+          <img
+            src={item.image}
+            alt={`Preview of ${item.name}`}
+            loading="lazy"
+            class="w-full aspect-[16/11] object-cover
+                   grayscale opacity-75
+                   group-hover:grayscale-0 group-hover:opacity-100
+                   transition"
+          />
+        </a>
+
+        <div class="p-4">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-sm font-semibold text-slate-900">
+              {item.name}
+            </h3>
+
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener"
+              class="text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4"
+            >
+              View
+            </a>
+          </div>
+
+          <p class="mt-1 text-xs text-slate-500 break-all">
+            {item.url}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
