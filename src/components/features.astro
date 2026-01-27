@@ -2,68 +2,77 @@
 // @ts-ignore
 import { Icon } from "astro-icon/components";
 
-const features = [
-  {
-    title: "Bring Your Own Framework",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
-  },
-  {
-    title: "100% Static HTML, No JS",
-    description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-  },
+const included = [
+  "One-page website",
+  "Mobile-friendly layout",
+  "Services section",
+  "About section",
+  "Contact section",
+  "Google Maps integration",
+  "Call and email buttons",
+  "Stock images (if needed)",
+];
+
+const extras = [
+  "Product catalogs",
+  "Menus with many items",
+  "Online stores (e-commerce)",
+  "Booking or appointment systems",
+  "SEO campaigns or ongoing SEO work",
+  "Full redesigns after delivery",
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
-</div>
+<section class="mt-28">
+  <!-- Heading -->
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
+      What’s included
+    </h2>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
+    <p class="text-lg mt-4 text-slate-600">
+      Everything needed for a clear, professional online presence. No extras, no surprises.
+    </p>
+  </div>
+
+  <!-- Content -->
+  <div class="mx-auto max-w-3xl mt-12">
+    <div class="grid sm:grid-cols-2 gap-12">
+      <!-- Included -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">
+          Included in the website
+        </h3>
+
+        <ul class="space-y-3">
+          {included.map((item) => (
+            <li class="flex gap-3 items-start">
+              <span class="mt-2 h-2 w-2 rounded-full flex-shrink-0" style="background:#19766E"></span>
+              <span class="text-slate-700">{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-    ))
-  }
-</div>
+
+      <!-- Extras -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2">
+          Extras
+        </h3>
+
+        <p class="text-slate-500 mb-4">
+          Available if needed, but not part of the standard website.
+        </p>
+
+        <ul class="space-y-3">
+          {extras.map((item) => (
+            <li class="flex gap-3 items-start">
+              <span class="mt-2 h-2 w-2 rounded-full flex-shrink-0 bg-slate-400"></span>
+              <span class="text-slate-600">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
