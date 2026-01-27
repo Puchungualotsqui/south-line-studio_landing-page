@@ -1,17 +1,118 @@
 ---
-import Link from "./ui/link.astro";
+import Link from "@/components/ui/link.astro";
 ---
 
-<div
-  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
-  <h2 class="text-white text-4xl md:text-6xl tracking-tight">
-    Build faster websites.
-  </h2>
-  <p class="text-slate-400 mt-4 text-lg md:text-xl">
-    Pull content from anywhere and serve it fast with Astro's next-gen island
-    architecture.
-  </p>
-  <div class="flex mt-5">
-    <Link href="#" style="inverted">Get Started</Link>
+<section id="contact" class="mt-28">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">
+      Get in touch
+    </h2>
+
+    <p class="text-lg mt-4 text-slate-600">
+      If you’d like a website or have a quick question, leave your details below.
+      I’ll reply by email or phone.
+    </p>
   </div>
-</div>
+
+  <div class="mx-auto max-w-3xl mt-10">
+    <form
+      action="https://formspree.io/f/xwvozwjz"
+      method="POST"
+      class="grid gap-5"
+    >
+      <!-- Honeypot (spam protection) -->
+      <input type="text" name="_gotcha" class="hidden" />
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">
+            Phone
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">
+          Type of business
+        </label>
+        <input
+          type="text"
+          name="business"
+          placeholder="Electrician, café, clinic, etc."
+          class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">
+          What do you need?
+        </label>
+        <select
+          name="service"
+          class="w-full rounded-md border border-slate-300 px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-900"
+        >
+          <option>Landing page</option>
+          <option>Hosting & maintenance</option>
+          <option>Landing page + hosting</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-slate-700 mb-1">
+          Message (optional)
+        </label>
+        <textarea
+          name="message"
+          rows="4"
+          class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+        ></textarea>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 items-start">
+        <button
+          type="submit"
+          class="cursor-pointer inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-white font-medium hover:bg-slate-800 transition"
+        >
+          Send message
+        </button>
+
+        <p class="text-sm text-slate-500 max-w-sm">
+          Or call directly if you prefer. No obligation.
+        </p>
+      </div>
+    </form>
+
+    <div class="mt-6 text-sm text-slate-500">
+      Prefer calling?
+      <a href="tel:+61000000000" class="underline underline-offset-4 ml-1">
+        Call now
+      </a>
+      or
+      <a
+        href="mailto:southlinestudio@gmail.com"
+        class="underline underline-offset-4 ml-1"
+      >
+        email
+      </a>
+    </div>
+  </div>
+</section>

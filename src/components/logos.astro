@@ -1,11 +1,6 @@
 ---
 const work = [
   {
-    name: "Otero Ediciones",
-    url: "https://oteroediciones.com",
-    image: "/work/oteroediciones.jpg",
-  },
-  {
     name: "Aprendiendo con Otero Ediciones",
     url: "https://aprendiendoconoteroediciones.com",
     image: "/work/aprendiendo.jpg",
@@ -15,6 +10,11 @@ const work = [
     url: "https://soundtools.dev",
     image: "/work/soundtools.jpg",
   },
+  {
+    name: "Otero Ediciones",
+    url: "https://oteroediciones.com",
+    image: "/work/oteroediciones.jpg",
+  }
 ];
 ---
 
@@ -39,7 +39,7 @@ const work = [
             src={item.image}
             alt={`Preview of ${item.name}`}
             loading="lazy"
-            class="w-full aspect-[16/11] object-cover
+            class="w-full aspect-16/11 object-cover
                    grayscale opacity-75
                    group-hover:grayscale-0 group-hover:opacity-100
                    transition"
