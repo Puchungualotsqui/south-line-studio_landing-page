@@ -14,7 +14,7 @@ const work = [
     name: "Otero Ediciones",
     url: "https://oteroediciones.com",
     image: "/work/oteroediciones.jpg",
-  }
+  },
 ];
 ---
 
@@ -24,49 +24,50 @@ const work = [
       Recent work
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      A few live examples of websites I’ve built.
+      A few live examples of websites I've built.
     </p>
   </div>
 
   <div class="mx-auto max-w-3xl mt-8 grid sm:grid-cols-2 gap-5">
-    {work.map((item, index) => (
-      <article
-        class={`group overflow-hidden rounded-xl border border-slate-200 bg-white shadow
-        ${index === work.length - 1 ? "sm:col-span-2 sm:max-w-md sm:mx-auto" : ""}`}
-      >
-        <a href={item.url} target="_blank" rel="noopener" class="block">
-          <img
-            src={item.image}
-            alt={`Preview of ${item.name}`}
-            loading="lazy"
-            class="w-full aspect-16/11 object-cover
-                   grayscale opacity-75
-                   group-hover:grayscale-0 group-hover:opacity-100
-                   transition"
-          />
-        </a>
+    {work.map((item, index) => {
+      const isLast = index === work.length - 1;
+      const cardClass =
+        "group overflow-hidden rounded-xl border border-slate-200 bg-white shadow" +
+        (isLast ? " sm:col-span-2 sm:max-w-md sm:mx-auto" : "");
 
-        <div class="p-4">
-          <div class="flex items-center justify-between gap-3">
-            <h3 class="text-sm font-semibold text-slate-900">
-              {item.name}
-            </h3>
+      return (
+        <article class={cardClass}>
+          <a href={item.url} target="_blank" rel="noopener" class="block">
+            <img
+              src={item.image}
+              alt={`Preview of ${item.name}`}
+              loading="lazy"
+              class="w-full aspect-[16/11] object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition"
+            />
+          </a>
 
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener"
-              class="text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4"
-            >
-              View
-            </a>
+          <div class="p-4">
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="text-sm font-semibold text-slate-900">
+                {item.name}
+              </h3>
+
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener"
+                class="text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4"
+              >
+                View
+              </a>
+            </div>
+
+            <p class="mt-1 text-xs text-slate-500 break-all">
+              {item.url}
+            </p>
           </div>
-
-          <p class="mt-1 text-xs text-slate-500 break-all">
-            {item.url}
-          </p>
-        </div>
-      </article>
-    ))}
+        </article>
+      );
+    })}
   </div>
 </section>
