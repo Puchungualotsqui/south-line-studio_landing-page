@@ -23,7 +23,7 @@ const extras = [
 ];
 ---
 
-<section class="mt-28">
+<section id="included" class="mt-28">
   <!-- Heading -->
   <div class="mx-auto max-w-3xl">
     <h2 class="text-4xl lg:text-5xl font-bold tracking-tight">
@@ -47,7 +47,7 @@ const extras = [
         <ul class="space-y-3">
           {included.map((item) => (
             <li class="flex gap-3 items-start">
-              <span class="mt-2 h-2 w-2 rounded-full flex-shrink-0" style="background:#19766E"></span>
+              <span class="mt-2 h-2 w-2 rounded-full shrink-0" style="background:#19766E"></span>
               <span class="text-slate-700">{item}</span>
             </li>
           ))}
@@ -67,7 +67,7 @@ const extras = [
         <ul class="space-y-3">
           {extras.map((item) => (
             <li class="flex gap-3 items-start">
-              <span class="mt-2 h-2 w-2 rounded-full flex-shrink-0 bg-slate-400"></span>
+              <span class="mt-2 h-2 w-2 rounded-full shrink-0 bg-slate-400"></span>
               <span class="text-slate-600">{item}</span>
             </li>
           ))}
