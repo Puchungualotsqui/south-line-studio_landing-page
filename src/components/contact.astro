@@ -9,8 +9,8 @@ import Link from "@/components/ui/link.astro";
     </h2>
 
     <p class="text-lg mt-4 text-slate-600">
-      If you’d like a website or have a quick question, leave your details below.
-      I’ll reply by email or phone.
+      If you'd like a website or have a quick question, leave your details below.
+      I'll reply by email or phone.
     </p>
   </div>
 
@@ -21,66 +21,74 @@ import Link from "@/components/ui/link.astro";
       class="grid gap-5"
     >
       <!-- Honeypot (spam protection) -->
-      <input type="text" name="_gotcha" class="hidden" />
+      <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
 
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">
+          <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1">
             Phone
           </label>
           <input
+            id="contact-phone"
             type="tel"
             name="phone"
             required
+            autocomplete="tel"
             class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">
+          <label for="contact-email" class="block text-sm font-medium text-slate-700 mb-1">
             Email
           </label>
           <input
+            id="contact-email"
             type="email"
             name="email"
             required
+            autocomplete="email"
             class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
           />
         </div>
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">
+        <label for="contact-business" class="block text-sm font-medium text-slate-700 mb-1">
           Type of business
         </label>
         <input
+          id="contact-business"
           type="text"
           name="business"
           placeholder="Electrician, café, clinic, etc."
+          autocomplete="organization"
           class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
         />
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">
+        <label for="contact-service" class="block text-sm font-medium text-slate-700 mb-1">
           What do you need?
         </label>
         <select
+          id="contact-service"
           name="service"
           class="w-full rounded-md border border-slate-300 px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-900"
         >
-          <option>Landing page</option>
-          <option>Hosting & maintenance</option>
-          <option>Landing page + hosting</option>
-          <option>Other</option>
+          <option value="Landing page">Landing page</option>
+          <option value="Hosting & maintenance">Hosting & maintenance</option>
+          <option value="Landing page + hosting">Landing page + hosting</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1">
+        <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1">
           Message (optional)
         </label>
         <textarea
+          id="contact-message"
           name="message"
           rows="4"
           class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"

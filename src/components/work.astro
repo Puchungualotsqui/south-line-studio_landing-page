@@ -1,19 +1,25 @@
 ---
+import { Image } from "astro:assets";
+
+import aprendiendoImg from "@/assets/work/aprendiendo.jpg";
+import soundtoolsImg from "@/assets/work/soundtools.jpg";
+import oteroImg from "@/assets/work/oteroediciones.jpg";
+
 const work = [
   {
     name: "Aprendiendo con Otero Ediciones",
     url: "https://aprendiendoconoteroediciones.com",
-    image: "/work/aprendiendo.jpg",
+    image: aprendiendoImg,
   },
   {
     name: "SoundTools",
     url: "https://soundtools.dev",
-    image: "/work/soundtools.jpg",
+    image: soundtoolsImg,
   },
   {
     name: "Otero Ediciones",
     url: "https://oteroediciones.com",
-    image: "/work/oteroediciones.jpg",
+    image: oteroImg,
   },
 ];
 ---
@@ -38,10 +44,13 @@ const work = [
       return (
         <article class={cardClass}>
           <a href={item.url} target="_blank" rel="noopener" class="block">
-            <img
+            <Image
               src={item.image}
               alt={`Preview of ${item.name}`}
+              widths={[420, 640, 860]}
+              sizes="(max-width: 640px) 100vw, 640px"
               loading="lazy"
+              format="avif"
               class="w-full aspect-[16/11] object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition"
             />
           </a>
