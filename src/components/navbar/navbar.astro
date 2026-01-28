@@ -1,6 +1,5 @@
 ---
 import Container from "@/components/container.astro";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   { title: "What’s included", path: "#included" },
@@ -11,52 +10,27 @@ const menuitems = [
 
 <Container>
   <header class="my-6">
-    <div class="mx-auto max-w-3xl">
-      <Astronav>
-        <div class="flex items-center justify-between">
-          <!-- Brand -->
-          <a href="/" class="text-lg font-semibold text-slate-800">
-            South Line Studio
-          </a>
+    <div class="mx-auto max-w-3xl flex items-center justify-between">
+      <!-- Brand -->
+      <a href="/" class="text-lg font-semibold text-slate-800">
+        South Line Studio
+      </a>
 
-          <!-- Mobile menu icon -->
-          <div class="block lg:hidden">
-            <MenuIcon class="w-5 h-5 text-slate-800" />
-          </div>
-
-          <!-- Desktop menu -->
-          <MenuItems class="hidden lg:flex">
-            <ul class="flex items-center gap-4">
-              {menuitems.map((item) => (
-                <li>
-                  <a
-                    href={item.path}
-                    class="text-sm text-slate-600 hover:text-slate-900"
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </MenuItems>
-        </div>
-
-        <!-- Mobile menu -->
-        <MenuItems class="lg:hidden mt-3">
-          <ul class="flex flex-col gap-2">
-            {menuitems.map((item) => (
-              <li>
-                <a
-                  href={item.path}
-                  class="block py-1 text-slate-600 hover:text-slate-900"
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </MenuItems>
-      </Astronav>
+      <!-- Navigation -->
+      <nav>
+        <ul class="flex items-center gap-4">
+          {menuitems.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class="text-sm text-slate-600 hover:text-slate-900"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   </header>
 </Container>
